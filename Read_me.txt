@@ -42,3 +42,11 @@ Dataset : This includes dataset of sentences.txt and after preprocessing NERTag.
 word_embedding : It consists of word2Vec embedding
 
 model : the output weight file will be saved in this directory
+
+
+
+##################################################################
+
+{"١":1, "٢":2, "٣":3,"٤":4,"٥":5,"٦":6,"٧":7,"٨":8,"٩":9,"٠":0}
+
+
