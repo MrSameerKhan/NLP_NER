@@ -3,7 +3,7 @@
 """
 Created on Mon Feb 10 08:28:11 2020
 
-@author: zyclyx
+@author: sameer
 """
 
 #Tensorflow GPU utilization and diasble console warnings
