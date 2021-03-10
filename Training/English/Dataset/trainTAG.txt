@@ -1,0 +1,38 @@
+Hello NNP O O
+my PRP$ O O
+name NN B-NP B-NAME
+is VBZ O O
+`` `` O O
+Sameer NNP O O
+Khan NNP O O
+'' '' O O
+. . O O
+
+My PRP$ O O
+second JJ B-NP O
+bike NN I-NP O
+is VBZ O O
+Yamaha NNP O O
+R15 NNP O O
+V3 NNP O O
+. . O O
+
+My PRP$ O O
+first JJ B-NP B-FIRST
+trip NN I-NP O
+to TO O O
+saudi VB O O
+in IN O O
+the DT B-NP O
+month NN I-NP O
+of IN O O
+September NNP O O
+. . O O
+
+I PRP O O
+have VBP O O
+an DT B-NP O
+indian JJ I-NP O
+passport NN I-NP B-PASSPORT
+. . O O
+

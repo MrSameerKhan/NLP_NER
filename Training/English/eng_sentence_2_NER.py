@@ -6,7 +6,7 @@ from nltk.chunk import tree2conlltags
 from pprint import pprint
 
 # Read text file
-text = open("Dataset/test.txt")					# change the path of train.txt / valid.txt / test.txt
+text = open("Dataset/train.txt")					# change the path of train.txt / valid.txt / test.txt
 text = text.read()
 
 # Convert text to word
@@ -27,7 +27,7 @@ cs = cp.parse(word_pos)
 #BOI Tagging on POS Tagging
 iob_tagged = tree2conlltags(cs)
 
-
+print(iob_tagged)
 
 NER_List = []
 
@@ -38,8 +38,6 @@ for TupList in iob_tagged:
         con_tup_list.append("B-NAME")
     elif TupList[0].upper()== "FIRST" :
         con_tup_list.append("B-FIRST")
-    elif TupList[0].upper()== "FATHER" :
-        con_tup_list.append("B-FATHER")
     elif TupList[0].upper()== "PASSPORT" :
         con_tup_list.append("B-PASSPORT")
     
@@ -52,7 +50,7 @@ for TupList in iob_tagged:
     
 
 #Save POS-BOI Tag in text file
-f = open("Dataset/testTAG.txt", "w+")							# Change the saving path trainTAG.txt / validTAG.txt / testTAG.txt
+f = open("Dataset/trainTAG.txt", "w+")							# Change the saving path trainTAG.txt / validTAG.txt / testTAG.txt
 
 for i in NER_List :
     name = str(i[0])
@@ -70,6 +68,6 @@ for i in NER_List :
         f.write(final+"\n"+"\n")
     else :
         f.write(final+"\n")
-        
+       
 f.close()
 

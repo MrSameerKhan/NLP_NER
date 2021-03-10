@@ -35,11 +35,12 @@ def tag_dataset(dataset):
     b.update(i+1)
     return predLabels, correctLabels
 
-
+# [ ['EU', 'B-ORG'], ['rejects', 'O'], ['German', 'B-MISC'], ['call', 'O'], ['to', 'O'], ['boycott', 'O'], ['British', 'B-MISC'], ['lamb', 'O'], ['.', 'O'] ]
 trainSentences = readfile("Dataset/trainTAG.txt")					# Change the NER dataset file
 devSentences = readfile("Dataset/validTAG.txt")
 testSentences = readfile("Dataset/testTAG.txt")
 
+# [['name', ['n', 'a', 'm', 'e'], 'B-NAME\n'],['is', ['i', 's'], 'O\n'], ['``', ['`', '`'], 'O\n'], ['Sameer', ['S', 'a', 'm', 'e', 'e', 'r'], 'O\n']]
 trainSentences = addCharInformatioin(trainSentences)
 devSentences = addCharInformatioin(devSentences)
 testSentences = addCharInformatioin(testSentences)
@@ -53,10 +54,12 @@ for dataset in [trainSentences, devSentences, testSentences]:
             labelSet.add(label)
             words[token.lower()] = True
 
+# {'O\n': 0, 'B-FIRST\n': 1, 'B-PASSPORT\n': 2, 'B-NAME\n': 3}
 # :: Create a mapping for the labels ::
 label2Idx = {}
 for label in labelSet:
     label2Idx[label] = len(label2Idx)
+
 
 # :: Hard coded case lookup ::
 case2Idx = {'numeric': 0, 'allLower':1, 'allUpper':2, 'initialUpper':3, 'other':4, 'mainly_numeric':5, 'contains_digit': 6, 'PADDING_TOKEN':7}
@@ -67,7 +70,7 @@ caseEmbeddings = np.identity(len(case2Idx), dtype='float32')
 word2Idx = {}
 wordEmbeddings = []
 
-fEmbeddings = open("word_embedding/glove.6B.100d.txt")						# word embeddding path
+fEmbeddings = open("wordEmbedding/glove.6B.100d.txt")						# word embeddding path
 
 for line in fEmbeddings:
     split = line.strip().split(" ")
